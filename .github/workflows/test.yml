@@ -213,6 +213,7 @@ jobs:
           else
             echo "⚠️ No video recording found" >> $GITHUB_STEP_SUMMARY
           fi
-          - name: Fail if E2E tests failed
-          continue-on-error: true
-          run: exit 1
+
+      - name: Fail if E2E tests failed
+        continue-on-error: true
+        run: exit 1
