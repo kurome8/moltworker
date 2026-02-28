@@ -96,10 +96,8 @@ jobs:
         run: npm install -g playwright && npx playwright install --with-deps chromium
 
       - name: Run E2E tests (${{ matrix.config.name }})
-      continue-on-error: true
-        id: e2e
         continue-on-error: true
-        env:
+        id: e2e
           # Cloud infrastructure credentials (from repo secrets with E2E_ prefix)
           CLOUDFLARE_API_TOKEN: ${{ secrets.E2E_CLOUDFLARE_API_TOKEN }}
           CF_ACCOUNT_ID: ${{ secrets.E2E_CF_ACCOUNT_ID }}
