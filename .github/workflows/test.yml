@@ -96,6 +96,7 @@ jobs:
         run: npm install -g playwright && npx playwright install --with-deps chromium
 
       - name: Run E2E tests (${{ matrix.config.name }})
+      continue-on-error: true
         id: e2e
         continue-on-error: true
         env:
